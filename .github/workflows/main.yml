@@ -1,0 +1,35 @@
+name: Build and Deploy
+on: [push]
+permissions:
+  contents: write
+jobs:
+  build-and-deploy:
+    concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      
+      # Install project
+      - name: Install project
+        run: npm install
+        working-directory: src
+
+      - name: fix project
+        run: |
+          awk '{ if (NR == 4) print "$fa-font-path: node_modules/font-awesome/fonts;"; else print $0}' ./node_modules/font-awesome/scss/_variables.scss > ./node_modules/font-awesome/scss/temp && cp ./node_modules/font-awesome/scss/temp ./node_modules/font-awesome/scss/_variables.scss
+        working-directory: src
+      # Build project
+      - name: Build project
+        run: npm run deploy
+        working-directory: src
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: src/dist
