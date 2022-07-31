@@ -41,7 +41,10 @@
                     <div class="row about-wrapper">
                         <div class="col-md-6 col-sm-12">
                             <div class="about-wrapper__image load-hidden">
-                                <img alt="Profile Image" class="img-fluid rounded shadow-lg" height="auto" width="300px" src="assets/profile.jpg" alt="Profile Image"/>
+                                <picture>
+                                    <source type="image/webp" srcset="assets/profile.jpg?as=webp&width=300, assets/profile.jpg?as=webp&width=600 2x">
+                                    <img alt="Profile Image" class="img-fluid rounded shadow-lg" height="auto" width="300px" src="assets/profile.jpg" alt="Profile Image">
+                                </picture>
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-12">
@@ -89,7 +92,10 @@
                         <div class="project-wrapper__image load-hidden">
                             <a rel="noreferrer" href="#!" target="_blank">
                                 <div data-tilt data-tilt-max="4" data-tilt-glare="false" data-tilt-max-glare="1" class="thumbnail rounded js-tilt">
-                                    <img alt="Project Image" class="img-fluid" width="560" height="315" src="assets/project.jpg"/>
+                                    <picture>
+                                        <source type="image/webp" srcset="assets/project.jpg?as=webp&width=560&height=315, assets/project.jpg?as=webp&width=600 2x">
+                                        <img alt="Project Image" class="img-fluid" width="560" height="315" src="assets/project.jpg">
+                                    </picture>
                                 </div>
                             </a>
                         </div>
