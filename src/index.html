@@ -4,16 +4,20 @@
         <meta charset="utf-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <link rel="shortcut icon" type="image/ico" src="assets/favicon.ico"/>
+        <link rel="shortcut icon" href="static/favicon.ico"/>
         <title>Geoff Poole | Developer</title>
         <meta name="description" content="Geoff Poole | Developer"/>
         <link rel="stylesheet" href="styles.scss" content-type="text/css"/>
         <script async defer src="./node_modules/github-buttons/dist/buttons.min.js"></script>
+        <!-- Include the CSS & JS.. (This could be direct from the package or bundled) -->
+        <link rel="stylesheet" href="node_modules/lite-youtube-embed/src/lite-yt-embed.css" />
 
+        <script src="./node_modules/lite-youtube-embed/src/lite-yt-embed.js"></script>
         <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/> -->
     </head>
     <!-- Todo: read the following HTML Todos to create your stunning portfolio website -->
     <body>
+        
             <div id="top"></div>
 
             <!-- **** Hero Section **** -->
@@ -42,8 +46,8 @@
                         <div class="col-md-6 col-sm-12">
                             <div class="about-wrapper__image load-hidden">
                                 <picture>
-                                    <source type="image/webp" srcset="assets/profile.jpg?as=webp&width=300, assets/profile.jpg?as=webp&width=600 2x">
-                                    <img alt="Profile Image" class="img-fluid rounded shadow-lg" height="auto" width="300px" src="assets/profile.jpg" alt="Profile Image">
+                                    <source type="image/webp" srcset="static/profile.jpg?as=webp&width=300, static/profile.jpg?as=webp&width=600 2x">
+                                    <img alt="Profile Image" class="img-fluid rounded shadow-lg" height="auto" width="300px" src="static/profile.jpg" alt="Profile Image">
                                 </picture>
                             </div>
                         </div>
@@ -93,8 +97,8 @@
                             <a rel="noreferrer" href="#!" target="_blank">
                                 <div data-tilt data-tilt-max="4" data-tilt-glare="false" data-tilt-max-glare="1" class="thumbnail rounded js-tilt">
                                     <picture>
-                                        <source type="image/webp" srcset="assets/project.jpg?as=webp&width=560&height=315, assets/project.jpg?as=webp&width=600 2x">
-                                        <img alt="Project Image" class="img-fluid" width="560" height="315" src="assets/project.jpg">
+                                        <source type="image/webp" srcset="static/project.jpg?as=webp&width=560&height=315, static/project.jpg?as=webp&width=600 2x">
+                                        <img alt="Project Image" class="img-fluid" width="560" height="315" src="static/project.jpg">
                                     </picture>
                                 </div>
                             </a>
@@ -121,13 +125,13 @@
                     </div>
                     <div class="col-lg-8 col-sm-12">
                         <div class="project-wrapper__image load-hidden">
-                            <a rel="noreferrer" href="#!" target="_blank">
-                                <div data-tilt data-tilt-max="4" data-tilt-glare="false" data-tilt-max-glare="1" class="thumbnail rounded js-tilt">
-                                    <div class="video-container">
-                                        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/CnkbYJxK_EI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    </div>
-                                </div>
-                            </a>
+                            <!-- <a rel="noreferrer" href="#!" target="_blank"> -->
+                                <!-- <div width="560" height="315" data-tilt data-tilt-max="4" data-tilt-glare="false" data-tilt-max-glare="1" class="thumbnail rounded js-tilt">                                   -->
+                                    <!-- <div class="video-container"> -->
+                                        <lite-youtube videoid="CnkbYJxK_EI" playlabel="YouTube video player"></lite-youtube>          
+                                    <!-- </div> -->
+                                <!-- </div> -->
+                            <!-- </a> -->
                         </div>
                     </div>
                 </div>
@@ -149,13 +153,11 @@
                     </div>
                     <div class="col-lg-8 col-sm-12">
                         <div class="project-wrapper__image load-hidden">
-                            <a rel="noreferrer" href="#!" target="_blank">
-                                <div width="560" height="315" data-tilt data-tilt-max="4" data-tilt-glare="false" data-tilt-max-glare="1" class="thumbnail rounded js-tilt">
-                                    <div class="video-container">
-                                        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/gMrBUJIzAZ0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    </div>
-                                </div>
-                            </a>
+                            <!-- <a rel="noreferrer" href="#!" target="_blank"> -->
+                                <!-- <div width="560" height="315" data-tilt data-tilt-max="4" data-tilt-glare="false" data-tilt-max-glare="1" class="thumbnail rounded js-tilt"> -->
+                                    <lite-youtube videoid="gMrBUJIzAZ0" playlabel="YouTube video player"></lite-youtube>
+                                <!-- </div> -->
+                            <!-- </a> -->
                         </div>
                     </div>
                 </div>
