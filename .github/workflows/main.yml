@@ -28,8 +28,12 @@ jobs:
       - name: Build project
         run: npm run deploy
         working-directory: src
-
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Deploy to Github Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          folder: ./src/dist
+          github_token: ${{ secrets.PAGES }}
+          publish_dir: ./src/dist
+#       - name: Deploy 🚀
+#         uses: JamesIves/github-pages-deploy-action@v4
+#         with:
+#           folder: ./src/dist
