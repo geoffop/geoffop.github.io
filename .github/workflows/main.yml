@@ -5,7 +5,7 @@ permissions:
 jobs:
   build-and-deploy:
     concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
@@ -19,12 +19,11 @@ jobs:
       - name: Install project
         run: npm install
         working-directory: src
-
-      # - name: fix project
-      #   run: |
-      #     awk '{ if (NR == 4) print "$fa-font-path: node_modules/font-awesome/fonts;"; else print $0}' ./node_modules/font-awesome/scss/_variables.scss > ./node_modules/font-awesome/scss/temp && cp ./node_modules/font-awesome/scss/temp ./node_modules/font-awesome/scss/_variables.scss
-      #   working-directory: src
-      # Build project
+        
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@v1.6
+        with:
+          projectBaseDir: src
       
       - name: Build project
         run: npm run deploy
@@ -35,8 +34,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./src/dist
-          
-#       - name: Deploy 🚀
-#         uses: JamesIves/github-pages-deploy-action@v4
-#         with:
-#           folder: ./src/dist
