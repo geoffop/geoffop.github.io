@@ -15,7 +15,7 @@
         "@parcel/transformer-sass": "latest",
         "parcel": "latest",
         "purgecss": "latest",
-        "sharp": "^0.29.3"
+        "sharp": "0.32.6"
     },
     "author": "Geoff Poole",
     "license": "GNU GPLv3",
