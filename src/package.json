@@ -25,7 +25,7 @@
         "bootstrap": "latest",
         "github-buttons": "latest",
         "jquery": "latest",
-        "lite-youtube-embed": "latest",
+        "lite-youtube-embed": "0.2.0",
         "scrollreveal": "latest",
         "vanilla-tilt": "latest"
     }
