@@ -15,7 +15,7 @@
         "@parcel/transformer-sass": "latest",
         "parcel": "latest",
         "purgecss": "latest",
-        "sharp": "0.32.6"
+        "sharp": "^0.31.3"
     },
     "author": "Geoff Poole",
     "license": "GNU GPLv3",
@@ -25,7 +25,7 @@
         "bootstrap": "latest",
         "github-buttons": "latest",
         "jquery": "latest",
-        "lite-youtube-embed": "^0.2.0",
+        "lite-youtube-embed": "latest",
         "scrollreveal": "latest",
         "vanilla-tilt": "latest"
     }
